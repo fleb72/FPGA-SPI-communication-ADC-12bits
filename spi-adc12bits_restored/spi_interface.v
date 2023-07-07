@@ -59,7 +59,7 @@ module spi_interface
 	wire dout_available; 	
 	assign dout_available = ((counter >= 5 ) || (counter == 0)) && (~cs_n);
 	
-	assign end_of_conversion = (counter == 4'd1) & (~cs_n);
+	assign end_of_conversion = (counter == 4'd1) && (~cs_n);
 	
 	
 	reg [11:0] data_temp;	// donnée temporaire 12bits
